@@ -6,13 +6,20 @@
                 <img  class="w-full " src="../../assets/images/logo_white.png" alt="Logo">
             </div>
             <div class="flex justify-evenly w-60">
-                <button class="h-10">Crie uma conta</button>
-                <button id="bor" class="h-10  w-25 text-brand-main  bg-white">Entrar</button>
+                <button class="text-white">Crie uma conta</button>
+                <button class="h-10  w-25 font-bold  text-brand-main rounded-full  bg-white">Entrar</button>
             </div>
         </div>
 
-        <div class="flex justify-between text-white font-bold text-4xl">
-            <h1>Tenha um feedback. <br> E faça seus clientes mais <br> felizes!</h1>
+        <div class="flex justify-between">
+            <div class="flex flex-col justify-evenly text-white">
+                <h1 class="font-bold text-4xl">Tenha um feedback. <br> E faça seus clientes mais <br> felizes!</h1>
+                <p >Receba ideias, reclamações e feedbacks com um <br> simples widget na página.</p>
+                <button class="bg-white font-bold text-brand-main h-10 w-42 rounded-full">Crie uma conta grátis</button>
+            </div>
+            <div>
+                <img src="../../assets/images/blue_balloons.png" width="400px" alt="balões">
+            </div>
         </div>
 
 
@@ -32,7 +39,5 @@
     justify-content: center;
     
 }
-#bor {
-    border-radius: calc(infinity * 1px);
-}
+
 </style>
