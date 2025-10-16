@@ -1,3 +1,4 @@
 import Emitter from 'tiny-emitter';
 
-export const emitter = new TinyEmitter()
+ const bus = new Emitter()
+ export default bus

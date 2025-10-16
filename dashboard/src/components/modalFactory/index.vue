@@ -1,6 +1,6 @@
 <template>
     <Teleport to="body">
-        <div v-if="state.isActive" @click="handleModalToggle({status: false})" class="fixed top-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50">
+        <div v-if="state.isActive" @click="handleModalToggle({status: false})" class="fixed top-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black opacity-50 ">
             <div class="fixed" :class="state.width">
                 <div class="flex flex-col items-center bg-white overflow-hidden animate__animated animate__backInDown">
                     <component :is="state.component" />
@@ -14,12 +14,13 @@
 <script setup>
 import { defineAsyncComponent, isReactive, onBeforeUnmount, reactive } from 'vue';
 import { onMounted } from 'vue';
-import usemodal from '../../hooks/useModal'
+import useModal from '../../hooks/useModal';
+
+const ModalLogin = defineAsyncComponent(() => import ('@/components/ModalLogin/index.vue'))
 
 
 const DEFAULT_WIDTH = 'w-3/4 lg:w-1/3'
-const modal = usemodal()
-const modalLogin = defineAsyncComponent(() => import('../modalLogin'))
+const modal = useModal()
 
 const state = reactive({
     isActive: false,
@@ -37,7 +38,7 @@ onBeforeUnmount(() => {
     modal.off(handleModalToggle)
 })
 
-function handleModalToggle ({status}){
+function handleModalToggle (payload){
      if(payload.status) {
         state.component = payload.component
         state.props = payload.props
@@ -47,7 +48,7 @@ function handleModalToggle ({status}){
         state.props = {}
         state.width = DEFAULT_WIDTH
      }
+     state.isActive = payload.status
 }
-
 
 </script>

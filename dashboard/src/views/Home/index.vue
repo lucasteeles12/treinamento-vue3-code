@@ -15,7 +15,9 @@ import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import customHeader from './customHeader.vue';
 import contacts from './contacts.vue';
-import useModal from '../../hooks/useModal'
+import useModal from '../../hooks/useModal';
+import ModalLogin from '../../components/ModalLogin/index.vue'; 
+
 defineOptions({
   name: 'indexHome'
 })
@@ -33,7 +35,8 @@ onMounted(() => {
 
 function handleLogin(){
   modal.open({
-    component: 'ModalLogin'
+    
+    component: ModalLogin
   })
 
 }

@@ -7,7 +7,7 @@
             </div>
             <div class="flex justify-evenly w-60">
                 <button class="text-white">Crie uma conta</button>
-                <button class="h-10  w-25 font-bold  text-brand-main rounded-full  bg-white">Entrar</button>
+                <button class="h-10  w-25 font-bold  text-brand-main rounded-full  bg-white" @click="emit('login')">Entrar</button>
             </div>
         </div>
 
@@ -30,6 +30,11 @@
 
    </header>
 </template>
+
+<script setup>
+const emit = defineEmits(['create-account', 'login'])
+</script>
+
 
 <style lang="postcss" scoped>
 .header{
