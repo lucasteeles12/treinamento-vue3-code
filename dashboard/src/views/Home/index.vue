@@ -17,6 +17,7 @@ import customHeader from './customHeader.vue';
 import contacts from './contacts.vue';
 import useModal from '../../hooks/useModal';
 import ModalLogin from '../../components/ModalLogin/index.vue'; 
+import ModalAccountCreate from '../../components/ModalAccountCreate/index.vue'
 
 defineOptions({
   name: 'indexHome'
@@ -42,6 +43,10 @@ function handleLogin(){
 }
 
 function handleAccountCreate(){
+  modal.open({
+    
+    component: ModalAccountCreate
+  })
   
 }
 </script>
