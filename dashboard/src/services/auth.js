@@ -4,7 +4,8 @@ export default httpClient => ({
             email,
             password
         })
-        const errors = null 
+        
+        let errors = null 
 
         if(!response.data){
             errors = {
@@ -14,7 +15,8 @@ export default httpClient => ({
         }
 
         return{
-            data:response.data
+            data:response.data,
+            errors
         }
         
     }
