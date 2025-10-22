@@ -1,12 +1,13 @@
 <template>
     <div>
-    <component :is="name" />
+    <component :is="name" v-bind="$props" />
     </div>
 </template>
 
 <script setup>
 import Loading from './Loading.vue'
-defineProps({
+
+const props = defineProps({
     name: {String, required:true }
 })
 </script>

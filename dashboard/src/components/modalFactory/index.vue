@@ -2,7 +2,7 @@
     <Teleport to="body">
         <div v-if="state.isActive" @click="handleModalToggle({status: false})" class="fixed top-0 left-0 z-50 flex justify-center items-center w-full h-full  bg-black/50">
             <div class="fixed" :class="state.width" @click.stop>
-                <div class="h-90 w-120 flex flex-col items-center bg-white overflow-hidden rounded-lg animate__animated animate__backInDown">
+                <div class="h-120 w-120 flex flex-col items-center bg-white overflow-hidden rounded-lg animate__animated animate__backInDown">
                     <component :is="state.component" />
                 </div>
             </div>

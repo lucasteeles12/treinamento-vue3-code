@@ -4,7 +4,7 @@ import AuthService from './auth'
 const API_ENVS = {
     production:'',
     development:'',
-    local: 'http://localhost:5173'
+    local: 'http://localhost:3000'
 }
 
 const httpClient = axios.create({

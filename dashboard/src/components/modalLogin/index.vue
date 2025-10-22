@@ -46,7 +46,8 @@
                 :class="{
                 'opacity-50': state.isLoading
                 }">
-                    Entrar
+                <icon v-if="state.isLoading" name="loading" class="animate_animated animate-spin" />
+                    <span>Entrar</span>
                 </button>
             </form>
         </div>
@@ -63,6 +64,7 @@ import { validateEmptyAndLength3 } from '@/utils/validators';
 import { validateEmptyAndEmail } from '@/utils/validators';
 import services from '../../services'
 import { useToast } from 'vue-toastification'
+import Icon from '../Icon/index.vue'
 
 defineOptions({
     name: 'ModalLogin' 
@@ -110,7 +112,7 @@ async function handleSubmit(){
 
         if (!errors){
             window.localStorage.setItem('token', data.token)
-            router.push({ name: 'Feedback'})
+            router.push({ name: 'Feedbacks'})
             state.isLoading = false
             modal.close()
             return
