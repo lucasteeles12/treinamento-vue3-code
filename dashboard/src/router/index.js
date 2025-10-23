@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/feedbacks',
       name: 'Feedbacks',
-      component: () => import ('@/views/Feedbacks/index.vue'),
+      component: Feedbacks,
       meta:{
         hasAuth: true
       }

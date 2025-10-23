@@ -104,11 +104,13 @@ function closeModal(){
 async function handleSubmit(){
     try {
         toast.clear()
+        modal.close
         state.isLoading = true
         const { data , errors } = await services.auth.login({
             email: state.email.value,
             password: state.password.value
         })
+       
 
         if (!errors){
             window.localStorage.setItem('token', data.token)
@@ -137,6 +139,10 @@ async function handleSubmit(){
          state.hasErros = !!error
          toast.error('Ocorreu um erro ao fazer o login.')
     }
+
+
+
+  
 }
 
 </script>
